@@ -5,4 +5,5 @@
 #include <iostream>
 
 std::vector<int>VertexCoverProblem(Graph);
+int selectedNode(Graph*);
 #endif

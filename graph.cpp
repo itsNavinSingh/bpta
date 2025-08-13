@@ -1,5 +1,5 @@
 #include "graph.h"
-
+#include <cstdint>
 Graph::Graph(int node)
 {
     size = node;
@@ -66,6 +66,18 @@ int Graph::getMaxDegreeNode()
         else if (degree(i) > maxDegree)
         {
             maxDegree = degree(i);
+            nodeNumber = i;
+            adjNodeSum = adjDegreeSum(i);
+        }
+    }
+    return nodeNumber;
+}
+
+int Graph::nodeWithDegree(int deg) {
+    int nodeNumber = -1;
+    int adjNodeSum = INT32_MAX;
+    for (int i =0; i<size; i++) {
+        if(degree(i) == deg && adjDegreeSum(i) < adjNodeSum) {
             nodeNumber = i;
             adjNodeSum = adjDegreeSum(i);
         }
@@ -152,4 +164,13 @@ int Graph::adjDegreeSum(int node)
         total_sum += degree(nd);
     }
     return total_sum;
+}
+int Graph::maxDegree() {
+    int deg = degree(0);
+    for (int i = 1; i<size; i++) {
+        if (deg < degree(i)) {
+            deg = degree(i);
+        }
+    }
+    return deg;
 }

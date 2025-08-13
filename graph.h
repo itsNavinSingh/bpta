@@ -23,5 +23,7 @@ class Graph {
     bool isComplete();
     std::vector<int> adjecent(int);
     int adjDegreeSum(int);
+    int maxDegree();
+    int nodeWithDegree(int);
 };
 #endif
