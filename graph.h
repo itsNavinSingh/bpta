@@ -21,5 +21,7 @@ class Graph {
     bool hasEdge(int, int);
     bool isDisconnected();
     bool isComplete();
+    std::vector<int> adjecent(int);
+    int adjDegreeSum(int);
 };
 #endif

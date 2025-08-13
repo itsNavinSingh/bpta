@@ -1,6 +1,6 @@
 #include <iostream>
-// #include "vcp.h"
-#include "clique.h"
+#include "vcp.h"
+// #include "clique.h"
 #include <fstream>
 
 int main(int argc, char **argv)
@@ -26,8 +26,8 @@ int main(int argc, char **argv)
         graph.add_edge(edge1, edge2);
     }
     file.close();
-    // std::vector<int> result = VertexCoverProblem(graph);
-    std::vector<int> result = Clique(graph);
+    std::vector<int> result = VertexCoverProblem(graph);
+    // std::vector<int> result = Clique(graph);
     std::ofstream output(argv[2]);
     if (!output) {
         std::cout << "Error creating the output file" << std::endl;
