@@ -67,6 +67,7 @@ int Graph::getMaxDegreeNode()
         {
             maxDegree = degree(i);
             nodeNumber = i;
+            adjNodeSum = adjDegreeSum(i);
         }
     }
     return nodeNumber;
@@ -146,7 +147,7 @@ int Graph::adjDegreeSum(int node)
 {
     std::vector<int> adjecent_node = adjecent(node);
     int total_sum = 0;
-    for (int &nd : adjecent_node)
+    for (int nd : adjecent_node)
     {
         total_sum += degree(nd);
     }
